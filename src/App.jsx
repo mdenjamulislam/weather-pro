@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Tempareture from "./components/Tempareature/Tempareture";
 import Details from "./components/Details/Details";
+import Forecast from "./components/Forecast/Forecast";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -35,8 +36,9 @@ const App = () => {
       <div className="container">
         <Tempareture data={data}></Tempareture>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-5 md:mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 mt-5 md:mt-8">
           <Details data={data}></Details>
+          <Forecast data={data}></Forecast>
         </div>
       </div>
     </div>

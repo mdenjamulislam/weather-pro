@@ -12,6 +12,10 @@ const Details = ({data}) => {
     if (current) {
         ({feelslike_c, feelslike_f, humidity, uv, vis_miles, wind_mph, pressure_mb} = current);
     }
+
+    
+
+
     return (
         <div>
             <h2 className="text-xl md:text-2xl font-bold pb-3 text-white">Weather details</h2>
