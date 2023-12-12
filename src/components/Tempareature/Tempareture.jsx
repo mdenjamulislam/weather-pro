@@ -43,7 +43,11 @@ const Tempareture = ({data}) => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-3 md:gap-5">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl flex gap-2"><span>{dayName}</span> <span>{temp_f}</span> <span>{temp_c}</span></h2>
+                    <div className="text-xl md:text-2xl lg:text-3xl flex gap-3">
+                        <p>{dayName} </p> 
+                        <p>{temp_f}<sup>o</sup></p> 
+                        <p>{temp_c}<sup>o</sup></p>
+                    </div>
                     <h2 className="text-xl md:text-2xl lg:text-3xl">Air Quality : <span>20 - Good</span></h2>
                 </div>
             </div>

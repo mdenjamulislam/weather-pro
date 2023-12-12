@@ -35,7 +35,7 @@ const App = () => {
       <div className="container">
         <Tempareture data={data}></Tempareture>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 mt-5 md:mt-8">
           <Details data={data}></Details>
         </div>
       </div>
