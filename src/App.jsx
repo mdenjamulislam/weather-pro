@@ -21,7 +21,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-[url(../public/bg.jpg)] bg-no-repeat bg-cover bg-center">
+    <div className="w-full h-screen bg-[url(../public/bg.jpg)] bg-no-repeat bg-cover bg-center py-5 flex items-center justify-center">
       <div className="container">
         <Tempareture data={data}></Tempareture>
 

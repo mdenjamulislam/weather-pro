@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { LineChart, ResponsiveContainer, XAxis } from "recharts";
 
 const Forecast = ({ apiKey, baseUrl, currentCountry }) => {
-    const [forecastData, setForecastData] = useState(null);
+    const [forecastData, setForecastData] = useState([null]);
     const endPoint = '/forecast.json';
     const apiEndpoint = baseUrl + endPoint;
 
@@ -21,7 +21,15 @@ const Forecast = ({ apiKey, baseUrl, currentCountry }) => {
 
     console.log(forecastData);
 
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    let { forecast } = forecastData;
+    let forecastday;
+
+    if (forecastData && forecastData.forecast) {
+        ({ forecast } = forecastData);
+        ({ forecastday } = forecast);
+    }
+    
+    console.log(typeof(forecastday));
     return (
         <div>
             <h2 className="text-xl md:text-2xl font-bold pb-3 text-white">5-day weather forecast</h2>
@@ -33,3 +41,6 @@ const Forecast = ({ apiKey, baseUrl, currentCountry }) => {
 };
 
 export default Forecast;
+
+
+
