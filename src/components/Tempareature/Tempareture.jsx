@@ -1,7 +1,6 @@
 
 
 const Tempareture = ({data}) => {
-    console.log(data);
     let current, location;
     if (data) {
         ({current, location } = data);

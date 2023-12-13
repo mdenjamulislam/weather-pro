@@ -7,27 +7,16 @@ import Forecast from "./components/Forecast/Forecast";
 const App = () => {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    const apiKey = '920ecab985bf4d2c8e443125231212';
-    const apiEndpoint = 'https://api.weatherapi.com/v1/current.json';
-    const currentCountry = 'Bangladesh';
+  const apiKey = '920ecab985bf4d2c8e443125231212';
+  const baseUrl = 'http://api.weatherapi.com/v1';
+  const currentCountry = 'Bangladesh';
+  const apiEndpoint = 'https://api.weatherapi.com/v1/current.json';
 
+
+  useEffect(() => {
     fetch(`${apiEndpoint}?key=${apiKey}&q=${currentCountry}&aqi=no`)
       .then(res => res.json())
       .then(data => setData(data));
-
-    // axios.get(apiEndpoint, {
-    //   headers: {
-    //     'Authorization': `Bearer ${apiKey}`,
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-    // .then(res => {
-    //   setData(res.data)
-    // })
-    // .catch(error => {
-    //   console.error('Error', error);
-    // })
 
   }, []);
 
@@ -38,7 +27,11 @@ const App = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 mt-5 md:mt-8">
           <Details data={data}></Details>
-          <Forecast data={data}></Forecast>
+          <Forecast 
+          apiKey={apiKey}
+          baseUrl={baseUrl}
+          currentCountry={currentCountry}
+          ></Forecast>
         </div>
       </div>
     </div>
